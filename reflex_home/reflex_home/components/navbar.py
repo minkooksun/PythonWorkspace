@@ -81,17 +81,23 @@ def navbar():
     return rx.box(
         rx.hstack(
             rx.hstack(
-                rx.avatar(fallback="RC", variant="solid"),
-                rx.heading("Reflex Chat"),
-                rx.desktop_only(
-                    rx.badge(
-                    State.current_chat,
-                    rx.tooltip(rx.icon("info", size=14), content="The current selected chat."),
-                    variant="soft"
-                    )
-                ),
-                align_items="center",
+                rx.heading("AI_STUDY", font_size="min(5vw, 35px)"),
+                marginRight="1em"
             ),
+            rx.hstack(
+                rx.link(
+                    "Home",
+                    href="/",
+                    color="black",
+                    marginRight="1em",
+                ),
+                rx.link(
+                    "Notion",
+                    href="/notion",
+                    color="black",
+                    marginRight="1em",
+                ),
+            ), 
             rx.hstack(
                 modal(rx.button("+ New chat")),
                 sidebar(
